@@ -16,6 +16,16 @@ docker run --rm \
     -w /var/www/html \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
+ 
+ or
+ 
+ docker run --rm \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+ 
+ if error "[RuntimeException] /var/www/html/vendor does not exist and could not be created." occurred
 
 ./vendor/bin/sail up
 
