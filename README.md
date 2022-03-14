@@ -43,17 +43,22 @@ docker run --rm \
 ./vendor/bin/sail up -d
 ```
 
-3. Run database migrations:
+3. Give write permissions to storage folder:
+```shell
+chmod -R 777 ./storage
+```
+
+4. Run database migrations:
 ```shell
 ./vendor/bin/sail artisan migrate
 ```
 
-4. Create a default user in the database:
+5. Create a default user in the database:
 ```shell
 ./vendor/bin/sail artisan db:seed
 ```
 
-5. Seed last 30 days exchange rates from cbr.ru service:
+6. Seed last 30 days exchange rates from cbr.ru service:
 ```shell
 ./vendor/bin/sail artisan currencies:seed
 ```
